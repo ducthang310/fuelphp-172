@@ -8,7 +8,7 @@
 ?>
 <div class="main">
     <div class="wrapper">
-        <h1><a href="index.html">logo</a></h1>
+        <h1><a href="<?php echo Uri::base(false)?>">logo</a></h1>
         <div class="fright">
             <div class="indent">
                 <span class="address">8901 Marmora Road, Glasgow, D04 89GR</span>
@@ -18,12 +18,12 @@
     </div>
     <nav>
         <ul class="menu">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="maintenance.html">Maintenance </a></li>
-            <li><a href="repair.html">Repair</a></li>
-            <li><a href="price.html">Price List</a></li>
-            <li><a href="locations.html">Locations</a></li>
+            <li><a class="active" href="<?php echo Uri::base(false); ?>">Home</a></li>
+            <li><a href="<?php echo Uri::create('index/about'); ?>">About Us</a></li>
+            <li><a href="<?php echo Uri::create('index/maintenance'); ?>">Maintenance </a></li>
+            <li><a href="<?php echo Uri::create('index/repair'); ?>">Repair</a></li>
+            <li><a href="<?php echo Uri::create('index/price'); ?>">Price List</a></li>
+            <li><a href="<?php echo Uri::create('index/locations'); ?>">Locations</a></li>
         </ul>
     </nav>
 

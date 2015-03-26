@@ -64,4 +64,51 @@ class Controller_Index extends Controller_Template
         $this->template->title = 'About';
         $this->template->content = View::forge('cms/about');
     }
+
+    public function action_maintenance()
+    {
+        /*
+         * Create a new asset type
+         */
+        Asset::add_path('assets/video/', 'video');
+
+        $data['js_files'] = array(
+            'theme-car/jquery-1.7.1.min.js',
+            'theme-car/cufon-yui.js',
+            'theme-car/cufon-replace.js',
+            'theme-car/Vegur_500.font.js',
+            'theme-car/jquery.prettyPhoto.js',
+            'theme-car/FF-cash.js'
+        );
+        $data['css_files'] = array(
+            'theme-car/reset.css',
+            'theme-car/style.css',
+            'theme-car/grid.css',
+            'theme-car/prettyPhoto.css'
+        );
+
+        $this->template->data = $data;
+        $this->template->title = 'Maintenance';
+        $this->template->content = View::forge('cms/maintenance');
+    }
+
+    public function action_repair()
+    {
+        $data['js_files'] = '';
+        $data['css_files'] = '';
+
+        $this->template->data = $data;
+        $this->template->title = 'Maintenance';
+        $this->template->content = View::forge('cms/repair');
+    }
+
+    public function action_priceList()
+    {
+        $data['js_files'] = '';
+        $data['css_files'] = '';
+
+        $this->template->data = $data;
+        $this->template->title = 'Maintenance';
+        $this->template->content = View::forge('cms/priceList');
+    }
 }
